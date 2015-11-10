@@ -1,0 +1,18 @@
+/* Top space offsets */
+.top-offset-1 {margin-top: 10px;}
+.top-offset-2 {margin-top: 20px;}
+.top-offset-3 {margin-top: 30px;}
+.top-offset-4 {margin-top: 40px;}
+.top-offset-5 {margin-top: 50px;}
+.top-offset-6 {margin-top: 60px;}
+.top-offset-7 {margin-top: 70px;}
+.top-offset-8 {margin-top: 80px;}
+.top-offset-9 {margin-top: 90px;}
+.top-offset-10 {margin-top: 100px;}
+
+.badge { padding: 5px 8px;}
+
+.removeitem {
+	cursor: pointer; 
+	cursor: hand;
+}
