@@ -23,14 +23,13 @@ angular.module('rssFeedApp')
 
         //Update the DOM when data is received
         $scope.updateModel = function(url) {
-          //Use Feed Service factory to parse returned data
 
+          //If url is not undefined ref it to $scope.rssFeed
           if(url !== undefined){
             $scope.rssFeed = url;
           }
-          console.log(url);
          
-
+          //Use Feed Service factory to parse returned data
           FeedService.parseRSS($scope.rssFeed)
             .then(function(data) {
               if (data === null) {
