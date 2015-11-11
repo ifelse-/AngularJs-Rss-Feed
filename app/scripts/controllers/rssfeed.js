@@ -14,7 +14,7 @@ angular.module('rssFeedApp')
       'AngularJS',
       'Karma'
     ];
-  }).controller('FeedCtrl', ['$http', '$interval', '$scope','FeedService', function ($http, $interval, $scope, FeedService) {    
+  }).controller('FeedCtrl', ['$http', '$scope','FeedService', function ($http, $scope, FeedService) {    
      
      //Default feed
      $scope.rssFeed = 'http://www.feedforall.com/blog-feed.xml';
@@ -22,15 +22,26 @@ angular.module('rssFeedApp')
      $scope.urlHistory = [];
 
         //Update the DOM when data is received
-        $scope.updateModel = function() {
+        $scope.updateModel = function(url) {
           //Use Feed Service factory to parse returned data
+
+          if(url !== undefined){
+            $scope.rssFeed = url;
+          }
+          console.log(url);
+         
+
           FeedService.parseRSS($scope.rssFeed)
             .then(function(data) {
               if (data === null) {
                 return;
               }
-            //Use urlHistory array to push new url
-            $scope.urlHistory.push($scope.rssFeed);  
+
+            //Use urlHistory array to push new url. If the same url don't add it.
+            if($scope.urlHistory.indexOf($scope.rssFeed) < 0 || $scope.urlHistory.length === 0){
+              $scope.urlHistory.push($scope.rssFeed);  
+            }
+
             //Hold feed data
             $scope.feeds = data.data.responseData.feed.entries;
 
@@ -45,19 +56,16 @@ angular.module('rssFeedApp')
                     if (index > -1) {
                         $scope.urlHistory.splice(index, 1);
                     }
-                    console.log($scope.urlHistory);
+                    //console.log($scope.urlHistory);
                 } else {
                     return false;
                 }
          };
  
-       // update initially
+        //update initially
         $scope.updateModel(); 
 
-        //then update every 30 secs
-        $interval(function() {
-            $scope.updateModel();
-        }, 30000);   
+       
 //Create a factory and return object with a function with jsonp wrapper to wait for a callback to append.
 }]).factory('FeedService', ['$http', function($http){   
   return {
