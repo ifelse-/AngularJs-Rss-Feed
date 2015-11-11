@@ -38,13 +38,16 @@ angular.module('rssFeedApp')
 
             //Use urlHistory array to push new url. If the same url don't add it.
             if($scope.urlHistory.indexOf($scope.rssFeed) < 0 || $scope.urlHistory.length === 0){
-              $scope.urlHistory.push($scope.rssFeed);  
+              $scope.urlHistory.push($scope.rssFeed);
+              //Clear search input  
+              $scope.rssFeed = '';
             }
 
             //Hold feed data
             $scope.feeds = data.data.responseData.feed.entries;
 
             });
+
         };
 
          //Remove url history function
