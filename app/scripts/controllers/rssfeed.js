@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc function
- * @name borisTestApp.controller:RssfeedCtrl
+ * @name rssFeedApp.controller:RssfeedCtrl
  * @description
  * # RssfeedCtrl
  * Controller of the borisTestApp

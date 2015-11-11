@@ -1,0 +1,13 @@
+<div class="col-md-7">
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon3">Quick Search:</span>
+        <input type="text" placeholder="Search for..." ng-model="searchText" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+      </div>
+      <ul class="unstyled">
+            <li ng-repeat="feed in feeds | filter:searchText">                    
+                <h5><a href="{{feed.link}}">{{feed.title}}</a></h5>                                        
+                <p class="text-left">{{feed.contentSnippet}}</p>                    
+                <span class="small">{{feed.publishedDate}}</span>
+            </li>                
+        </ul>  
+ </div>

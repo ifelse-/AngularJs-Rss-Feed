@@ -1,0 +1,9 @@
+<div class="top-offset-3">
+    <h3>Rss feed history</h3>
+	    <ul id="feed-list" class="list-group">
+	       <li id="{{$index}}" class="list-group-item" ng-repeat="urlHistorys in urlHistory track by $index">
+	        <span class="badge removeitem" ng-click="removeHistory()">X</span>
+	        <a class="url-item" ng-click="updateModel('{{urlHistorys}}');">{{urlHistorys}}</a>
+	        </li>
+	    </ul>
+</div>
