@@ -33,3 +33,9 @@ ul.feed-results { padding: 0; }
 	background-color: #fff;
 	color:#337ab7; 
 }
+
+.quick-search {
+	background-color: #428bca;
+    border-color: #357ebd;
+    color: #fff;
+}
