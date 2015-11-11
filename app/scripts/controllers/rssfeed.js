@@ -60,7 +60,8 @@ angular.module('rssFeedApp')
                     return false;
                 }
          };
- 
+
+  
         //update initially
         $scope.updateModel(); 
 

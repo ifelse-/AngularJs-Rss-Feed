@@ -16,3 +16,18 @@
 	cursor: pointer; 
 	cursor: hand;
 }
+
+.active {
+	background-color: #337ab7;
+    border-color: #2e6da4;
+    color: #fff;
+}
+
+.active a {
+	color: #fff;
+}
+
+.active span {
+	background-color: #fff;
+	color:#337ab7; 
+}

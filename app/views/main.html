@@ -6,16 +6,16 @@
               <div class="input-group">
                 <input type="text" class="form-control" ng-model='rssFeed' placeholder="Enter Feed Url...">
                 <span class="input-group-btn">
-                  <button class="btn btn-default" type="button" ng-click="updateModel()">Go!</button>
+                  <button class="btn btn-success btn-default" type="button" ng-click="updateModel()">Go!</button>
                 </span>
               </div><!-- /input-group -->
 
               <div class="top-offset-3">
                 <h3>Rss feed history</h3>
-                <ul class="list-group">
-                   <li class="list-group-item" ng-repeat="urlHistorys in urlHistory track by $index">
+                <ul id="feed-list" class="list-group">
+                   <li id="{{$index}}" class="list-group-item" ng-repeat="urlHistorys in urlHistory track by $index">
                     <span class="badge removeitem" ng-click="removeHistory()">X</span>
-                    <a class="url-item" ng-click="updateModel('{{urlHistorys}}')">{{urlHistorys}}</a>
+                    <a class="url-item" ng-click="updateModel('{{urlHistorys}}');">{{urlHistorys}}</a>
                     </li>
                 </ul>
               </div>
@@ -35,7 +35,7 @@
                     <span class="small">{{feed.publishedDate}}</span>
                 </li>                
             </ul>  
-           
+
          </div>
   </div>
 </div>
