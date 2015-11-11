@@ -12,6 +12,8 @@
 
 .badge { padding: 5px 8px;}
 
+ul.feed-results { padding: 0; }
+
 .removeitem, .url-item {
 	cursor: pointer; 
 	cursor: hand;
